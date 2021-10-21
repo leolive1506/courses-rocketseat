@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="wi${dth=device-wi}dth, initial-scale=1.0">
+    <title>Date</title>
+</head>
+<body>
+    <script>
+
+        // meses
+        const write  = (variavel, ...args) => document.write(variavel, args)
+
+        let dt = new Date()
+        let meses = [
+            "Janeiro", "Fevereiro", "Março", "Abril",
+            "Maio", "Junho", "Julho", "Agosto",
+            "Setembro", "Outubro", "Novembro", "Dezembro",
+        ]
+
+        let Dias = [
+            "Domingo", "Segunda", 'Terça', "Quarta", "Quinta", "Sexta", "Sábado", 
+        ]
+
+
+        write(`${Dias[dt.getDay()]}, ${dt.getDate()} de ${meses[dt.getMonth()]} de ${dt.getFullYear()}`, "<br>")
+
+        // horas
+        let hora = `${dt.getHours()}:${dt.getMinutes()}:${dt.getSeconds()}`
+
+        write(hora, "<br><br>")
+        // write(dt.getHours(), ":", dt.getMinutes(),":", dt.getSeconds(), "<br><br>")
+        write(dt.toDateString(), "<br><br>")
+        write(dt.toLocaleString(), "<br><br>")
+
+
+        // add data
+
+        
+        let newDate = new Date()
+
+        newDate.setDate(dt.getDate() + 22) // todos menos o ano
+        newDate.setFullYear(dt.getFullYear() + 10)
+
+
+        write("Alterando pelos SET", "<BR>")
+        let comSet = `${Dias[newDate.getDay()]}, ${newDate.getDate()} de ${meses[newDate.getMonth()]} de ${newDate.getFullYear()}`
+
+
+        write(comSet, "<br><br><br><br>")
+
+
+        // trabalhar a partir de data especifica
+        // new Date() ano, mes, dia, hora, min, seg, mil
+        newDate = new Date(1978, 2, 07, 10, 10, 10)
+
+        write(comSet, "<br>")
+        
+        write(`${newDate.getHours()}:${newDate.getMinutes()}:${newDate.getSeconds()}`, "<br>")
+    </script>
+</body>
+</html>

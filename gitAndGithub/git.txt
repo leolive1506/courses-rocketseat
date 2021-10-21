@@ -1,0 +1,129 @@
+Introdução Git
+    - Controle Versões Distribuido
+    - Histórico de alterações no código
+
+. Valor dado a cada commit
+    converte dados em números p/ garantir uma integridade de dados e contém uma fotografia de como estava o projeto naquele momento
+    Hash values (SHA - 1)
+
+Configuração Inicial
+    Identidade - Identifica quem ta fazendo as alterações
+        git config --global user.name "nameUser"
+        git config --global user.email email@email.com
+
+        * se quiser sbustituir essa informação com nome diferente para um projeto específico
+            roda o comando sem opção --global dentro do projeto
+
+    Ver as configurações
+        git config --list
+
+Head - aponta em que ponto da história estamos
+
+Git help
+    git help namecomando
+
+-------------------------------------------------------
+
+Iniciar um repositório
+    git init
+        p ver na pasta o arquivo escondido:
+            ls -a
+
+Adicionar na história  
+    git add nameFile ou git add . (add todos)
+Adicionar na história por extensão
+    git add *.extensão (add todos da extensão expressa)
+
+
+Marca o ponto na história
+    git commit -m "msg do commit"
+
+git status 
+    Ver situação atual
+
+
+Onde ele guarda o histórico - nessa pasta que guarda todo histórico
+    ls -al .git
+
+-------------------------------------------------------
+
+git log
+    Saber quais os pontos na história
+
+    Ver em uma linha:
+        git log --oneline
+
+    Saber ultimos 5
+        git log -n 5
+
+    Depois de uma determinada data
+        git log --since=2020-10-01
+    
+    Antes de uma data
+        git log --until=2020-10-01
+    
+    Filtrar pelo autor
+        git log --author=Name
+
+    Filtra por expressão regular
+        git log --grep="filtro"
+
+-------------------------------------------------------
+
+Remover arquivo que foi add (ex: caso coloque - git add . - e add todos arquivos)
+    git rm --cached nameFile.extension
+    git rm -r --cached nameFile.extension (tira tudo que tava no cache sendo rastreado)
+        dps fazer um git add .
+                    git commit -m ""
+
+-------------------------------------------------------
+
+Ver quais foram as alterações
+    git diff  (pega do working directory)
+    git diff --staged ( pega na stage area)
+    git diff --color-words (cor diferente na alteração)
+
+Ver modificações na história do projeto
+    usa as iniciais do commit desajado
+    ex
+        git show 234affasd23
+    Ver com cores diferentes as modificações
+        git show b389af15b --color-words
+    Ver modificações de todos arquivos ou por diretorio
+        git show 0b636ad4d -- src/views/*
+        git show 0b636ad4d -- src/views/nameFile.extensão
+
+-------------------------------------------------------
+
+Remover arquivos com o git
+    Deleta na mão e add na stage area e depois da o commit
+    ou
+    git rm namearquivo.extensão
+        remove de vez nem mostra na lixeira
+
+Renomear
+    git mv nomeAntigo.extensão nameNovo.extensão
+    depois so dar um git commit -m "msg"
+
+Mover Arquivo
+    Mesma ideia de renomear
+
+-------------------------------------------------------
+Quando já tiver arquivos sendo rastreados
+
+    Não precisa usar o git add
+    pode usar
+        git commit -am ""
+        Já é add na stage area e marcardo na história automatico
+        (funciona se todos arquivos já estiverem sendo rastreados)
+
+
+--------------------------------------------------------------------
+
+Ignorar arquivos
+    no vsCode criar um .gitignore
+        diretorioIgnorar/
+
+     git rm -r --cached nameFile.extension (tira tudo que tava no cache sendo rastreado)
+        dps fazer um git add .
+                    git commit -m ""

@@ -1,0 +1,105 @@
+Atributos básicos form
+    - action
+        Onde o formulário vai ser submetido
+        Se deixar vazio vai pra própria página
+
+    - method
+        POST or GET
+            Por padrão é GET
+
+        GET - verbo http que envia pro endereço (action)
+            ex: campo de pesquisas
+            
+        POST - os dados ficam escondidos, não mostram na URL
+            ex: Cria algo, criar usuários
+
+    <form action="" method="POST"></form>
+
+-------------------------------------------------------
+
+fieldset-legend
+
+fieldset
+    - Agrupamento de campos com mesmo propósitos
+
+    - Atributos especiais
+        . disabled
+            - Desabilita todos os elementos internos
+            - Não serão enviados ao submeter o formulário
+
+    - form
+        . o id de um formulário ao qual esse fieldset pertence
+            Linka o fieldset com algum formulário da pag o qual ele pertence
+        . fieldset não precisa estar dentro do form caso seja feito corretamente essas ligações
+    - name
+        . Nome do grupo
+
+legend
+    - Acompanha o fieldset
+    - É o nome do Agrupamento
+    - Primeiro elemento dentro do fieldset
+
+-------------------------------------------------------
+
+label
+    - Associar e identificar uma (ou mais) tag de entrada de dados
+    - clicar nela direciona p o foco de entrada de dados
+
+    Atributos: 
+        . for
+            - para fazer a conexão entra a label e tag de entrada
+            - funciona com elementos específicos
+                . button, inpu (not hidden), meter, output, progress, select, textarea
+
+-------------------------------------------------------
+
+button
+    - envia formularios
+    - estilizado pelo user agente (navegador)
+
+    Atributos:
+        . type
+            - submit: enviar
+
+            - reset: Limpa o formulário (volta p value padrão)
+
+            - button: ALGUNS navegadores entendem como enviar
+
+            - autofocus: quando entrar na pag entra no primeiro autofocus
+
+            - disabled: desabilita
+                . pode usar codigo js pra quando todo form estiver preenchido liberar o botão
+
+            - name e value
+                . enviam um valor com name e valor
+                    ex:<button type="submit" name="button" value="Valor qualquer">Enviar</button>
+                    
+            - form: linka a um form
+
+-------------------------------------------------------
+
+datalist
+    - nao tem auto complete até momento
+    - lista de valores sugestivos e não obrigatórios a uma tag input
+
+<input type="text" list="fruitsdata"> 
+<datalist id="fruitsdata">
+    <option>apple</option>
+    <option>banana</option>
+    <option>mango</option>
+    <option>orange</option>
+    <option>cherry</option>
+</datalist>
+
+    - id importante pra usar a list 
+
+    # Tipos input suportados
+        - text, search, url, tel, email, date, month, week, time, datetime-local, number, range e color.
+
+        * valores que não são compatíveis com o tipo <input> não serão apresentados
+
+    # tipos input não suportados
+        - hidden, passoword, checkbox, radi, file, ou qualquer tipo de button
+
+    # User Agente
+        Verificar compatibilidade com o browser (https://caniuse.com)

@@ -1,0 +1,184 @@
+input
+    - Um dos mais usados
+    - Diversos dados
+
+    Atributos comuns
+        - autocomplete
+            . Busca do navegado algum tipo de dado usado com frequência
+            <input type="email" autocomplete="email">
+
+        - autofocus
+            . Cursor vai automático pra ele
+            . Um por página
+            <input type="text" autofocus>
+
+        - disabled e readonly
+            . Ambos desabilitam so muda o aspecto
+
+        - value
+            . Atribui um valor
+
+        - form
+            . Link com formulário caso esteja fora do forms
+            . Caso esteja preciso de um atributo name se não pode dar problema na hora de tratar
+
+        - required
+            . input obrigatório a ser preenchido
+        
+        - placeholder (quase todos)
+            * não substitui o label
+
+-------------------------------------------------------
+
+passoword
+    - Esconde o campo digitado para maior segurança
+
+    #atributos:
+        - minlength / maxlength
+            . Limita min e/ou max de caracteres
+        - size
+            . tamanho do campo
+
+        - pattern
+            . Usar com title
+            . Expressão regular p/ validar oq está sendo digitado no campo
+            . Usar p/ padrão de segurança alto de senhas
+            ex:
+                a senha tem que conter caractres hexadecimais com limite de no mínimo 4 e no máximo 8 caracteres
+                    * pattern="[0-9a-fA-F]{4,8}"
+
+        - title
+            . Exibe uma mensagem informando o padrão exigido
+
+        - placeholder
+
+        - disabled e readonly
+            . bloqueiam o preenchimento
+
+        - required
+            . Exige que seja preenchido
+
+        - inputmode
+            . USADO ALTERAR TECLADO NO CELULAR
+            . ex: so add números
+                    * inputmode="numeric"
+
+        - autocomplete
+            . on: segestão de senha (new-password) ou sugestão de senha cadastrada (current-passoword)
+            . off: desabilita a opção de autocompletar
+            . new-password: o navegador poderá sugerir  uma nova senha
+
+-------------------------------------------------------
+
+email
+    - Valida se o valor digitado é um e-mail
+
+    #atributos
+        - placeholder
+        - readonly / disable e value
+            . definir um value e um email e se de desabilitar não da pra fazer alterações no valor
+        - required
+        - multiple
+            . permite colocar um ou mais e-mails separdo por virgula
+        - minlength e maxlength
+            . Min e max que o campo irá conter
+        - size
+        - pattern
+            . Uso de expressão regular para validar o campo
+            . Ex: o usuário so poderá colocar o email do domínio rockteseat.com.br
+                patter=".+@rockteseat\.com\.br"
+            . Usar um title informando o valor que deve receber
+
+        - list
+            . Colocar o id de um datalist no campo de entrada list=""
+                . Irá conter uma lista de valores pré-definidos como sugestão
+
+
+-------------------------------------------------------
+
+ulr
+    Valida se compo digitado é uma ulr
+
+    #atributos
+        - placeholder
+        - readonly / disabled e value
+        - required
+        - minlength e maxlength
+        - size
+        - pattern
+            . Uso expressão regular para validar o campo
+            . Ex: o usuário só poderá colocar domínio .com.br
+                patter=".*\.com\.br\/.*
+                obs: ele aceita sem o .com 
+        - list
+            . o id da datalist 
+            . deve conter uma lista de valores pré-definidos a fim de sugerir ao usuário, quais valores estão disponíveis
+                . valores não compatíveis com o campo não serão mostrados como sugestão
+
+        - spellcheck 
+            . habilitar a verficação ortográfica para este input
+
+-------------------------------------------------------
+
+file
+    - para envio dos arquivos no formulário deverá utilizar o *****método POST e atributo enctype="multipart/form-data" *******
+    - Usuário poderá escolher 1 ou mais arquivos para enviar no formulário
+
+    #atributos
+        - value
+            . Contém o arquivo a ser enviado
+        - files
+            . A lista de arquivo ou arquivos
+        - accetpt
+            . descreve que tipos de arquivos serão aceitos
+            . ex: .doc, .docx, .pdf, audio/*, image/*, video/*, .png
+        - multiple
+            . permite selecionar mais de um arquivo
+
+-------------------------------------------------------
+
+color
+    - Selecionar cor
+
+    #atributos
+        - value: RGB
+            - Se inválido, por padrão, preto é exibido
+        - list
+            . inserir id de uma datalist
+            . irá conter uma lista de valores pré-definidos
+                obs: não disponivel em muitos navegadoers
+
+-------------------------------------------------------
+
+checkbox
+    - Caixas p/ serem marcadas
+    - Seleciona valor a ser enviado
+    - Se não selecionado, não é enviado nenhum dado (chega como vazio)
+
+    #atributos
+        - Os globais
+        - value
+            . valor que ele contém
+            . se não for definido um value no campo, é chegado um valor como "on"
+        - checked
+            . p/ deixar o campo marcado por padrão
+
+        - pode marcar multiplos valores
+
+-------------------------------------------------------
+
+hidden
+    - input invisível ao Usuário
+    - será enviado com o formulário
+    - leitores de tela não percebem esse campo
+
+-------------------------------------------------------
+
+radio
+    - selecionar uma única opção de um grupo de opções
+
+    ATRIBUTOS ESSENCIAIS
+    - checked
+        indica que o campo foi marcado
+    - value
+        valor que o camo contém

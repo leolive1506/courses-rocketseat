@@ -1,0 +1,49 @@
+Serve para 
+    Backend, Frontend, 
+    Micro Serviços(micro aplicações), 
+    API(Local p disponibilizar dados para que outros backend possa consumir esses dados), 
+    Scripts e automação,
+    Inteligencia Artificial
+
+    !!!! Nâo é muito recomendados fazer com o node:
+        Muito processamento
+        ex: Muito processamento de videos e fotos
+
+    Vantagens node  
+        . Rapido -> Execução  e prototipar
+        . Alta escalabilidade
+
+O que é node?
+    Aplicação fala com sistema operacional(SO) e S.O fala com hardware
+    Node tem um "S.O" isolado so pra ele -> JS Runtime Enviroment que faz a comunicação com o S.O da maquina
+
+V8
+    Compoe a máquina virtual que irá rodar o JS na máquina
+        . Interpretador de JS para linguagem de máquina
+        . Criado em C++
+        . Baseado nas últimas features do JS
+        . Focado para Chrome mas tem todo o cuidade de não  quebrar o Node
+        . Não possui a DOM, console ou File system
+
+Como funciona
+    É single-threaded, uma thread (um garçon) e trabalha de maneira assincrona 
+        Pedido - request
+        Garçon - Thread
+        Cozinha - servidor
+        Chef - Banco de Dados
+        Event Loop (faz os pedidos)
+
+    Event Loop
+        Roda o tempo inteiro, pega eventos e fica no (event queue)
+        Quando pega um evento que pode bloquear a aplicação vai pra outro lugar (worker threads)
+
+        Ex de quando vai p worker threads
+            setImeout(), setInterval
+
+REPL
+    Read-Eval-Print-Loop(ler, interpretar, escrever, fazer em loop)
+    entrar no node
+        Terminal -> digitar node
+
+Tem modulos no node
+    ex: os path fs http stream

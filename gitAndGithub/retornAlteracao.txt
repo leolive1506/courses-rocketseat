@@ -1,0 +1,33 @@
+---------------------------------------------------
+Descartar mudanças
+    git restore nomeAquivo
+
+Caso use o git add e adiciona na stage area e queira remover
+    git restore --staged nameFile
+    ou
+    git restore --staged . (volta tudo)
+
+----------------------------------------------------------
+Corrigir o último commit
+    git commit --amend -m "msg" (muda a msg)
+
+Remover arquivo
+    git rm nameFile
+
+------------------------------------------------------------
+Recuperando arquivos
+    git checkout ak0893kck -- nameFile
+
+Removendo arquivos não rastreados
+    Destrutivo, não tem como voltar
+        git clean -n (mostra oq vai fazer)
+        git clean -f (força apagar)
+
+----------------------------------------------------------
+Revertendo um commit
+    git revert HEAD~NumbercommitDesajado
+
+Ou
+    git log --oneline
+    git revert aewr13248gk  
+----------------------------------------------------------

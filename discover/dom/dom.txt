@@ -1,0 +1,92 @@
+Selecionar elementos
+
+    Os elementos que devolver html colecion
+        Não da pra usar forEach
+
+
+    getElementById() 
+        . Retorna um element
+
+    document.getElementsByClassName()
+        . retorna um HTMLCollection
+
+    document.getElementsByTagName('head')
+        . retorna um HTMLCollection
+
+    document.querySelector('.one')
+        . Retorna um element
+        . Pega o primeiro que achar
+
+    document.querySelectorAll('.one')
+        . Retorna um Nodelist
+            Da pra usar forEach
+        . Seleciona todos que tem classe one
+
+-------------------------------------------------------------------------------------------------------------------------
+
+Manipulando conteúdos
+    textContent
+        Alterar ou verificar o conteúdo
+
+    innertext
+        Troca o texto interno do elemento
+    
+    innerHTML
+        Da p/ add elementos HTML
+
+    value
+        Retorna o valor ou atribui um valor
+
+    Manipulando atributos
+        .setAttribute("atributo", "valueAtributo") = coloca um atributo
+        .getAttribute('nameAtributo')
+            retorna o valor de um argumento específico do elemento. Se o atributo não existir, o valor retornado será nullou ""(string vazia).
+        .removeAttribute = remove atributo
+
+-------------------------------------------------------------------------------------------------------------------------
+
+Alterando estilos css
+    style.cssDesejado
+
+    classList
+        classList.toggle -> se NÃO existir ele add, se existir ele remove
+        classList.add -> add class
+        classList.remove -> remove class
+
+-------------------------------------------------------------------------------------------------------------------------
+
+Navegando pelos elementos
+    pais:
+        parentNode e parentElement
+            Navega pelos elementos pais
+
+    filhos:    
+        childNodes (da p rodar forEach)
+            Navega pelos elementos filhos
+            retorna em formato de nodeList
+
+        children (não da pra rodar forEach)
+            Navega pelos elementos filhos
+            retorna um HTMLCollection
+
+        firstChild / lastChild
+            Pega o primeiro / último filho e leva em consideração os espaços
+
+        firstElementChild / lastElementChild
+            Pega o primeiro / ultimo filho e não  leva em consideração os espaços
+
+    Irmão
+        nextSibling 
+            Leva em considereção espaços vazios
+        nextElementSibling
+            Não leva em consideração espaços vazios
+
+-------------------------------------------------------
+
+Criar e add elementos na Pega o pag
+    1) criar o elemento - createElement
+    2) add na pag
+        a) seleciona onde quer add
+        b) add no final: append(element) ou
+        c) add no começo: prepend(element) ou
+        d) insertBefore(newElement, NóReferenciaQueVaiAddAntes)

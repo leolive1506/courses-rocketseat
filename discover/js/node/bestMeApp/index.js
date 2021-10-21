@@ -1,0 +1,47 @@
+const questions = [
+    "O que aprendi hoje?",
+    "O que me deixou aborrecido? E o que eu poderia fazer para melhorar",
+    "O que me deixou feliz hoje?",
+    "Quantas pessoas ajudei hoje?"
+]
+
+const ask = (index = 0) => {
+    process.stdout.write("\n" + questions[index] + " > ")
+}
+
+ask()
+
+const answers = []
+
+// "data" -> ouve entrada de dados
+process.stdin.on("data", data => {
+    answers.push(data.toString().trim())
+    if(answers.length < questions.length) {
+        ask(answers.length)
+    } else {
+        process.exit() // fechar o processo
+    }
+
+})
+
+
+process.on("exit", () => {
+    console.log(`
+    
+        Bacana Léo!
+
+        O que você aprendeu hoje foi:
+        ${answers[0]}
+
+        O que te aborreceu hoje e você poderia fazer para melhorar foi:
+        ${answers[1]}
+
+        O que te deixou feliz hoje?
+        ${answers[2]}
+
+        Você ajudou ${answers[03]} hoje!!
+
+        Volte amanhã para novas reflexões
+        
+    `)
+})

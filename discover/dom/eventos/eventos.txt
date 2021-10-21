@@ -1,0 +1,19 @@
+click:   onclick="nameFunction()"
+doble click:    ondblclick="nameFunction()"
+
+quando mouse entrar elemento: onmouseover="nameFunction()"
+
+--------------------------------------------------------------------------------
+Eventos de teclado
+    onkeypress
+    onkeydown -. Para detectar apenas se o usuário pressionou uma tecla, use o evento
+    onkeyup
+
+--------------------------------------------------------------------------------
+Eventos via JS
+    addEventListener('tipo evento', qual função executar)
+        em qual função executar, se colocar namefunction(), ele chama ela de imediato, portanto, deixar sem parentese
+
+--------------------------------------------------------------------------------
+Argumento event
+    event - obj grande que serve com muitas funcionalidades
