@@ -32,3 +32,20 @@
 
 # Ver os repositorios que tem na nuvem
     git remote -v
+
+# Fazendo modificação
+```
+git commit -am "msg"
+```
+> Faz a o add automaticamente dos arquivos monitorados
+> Não precisa usar o ```git push -u origin main``` pode usar ```git push``` caso tenha feito o primeiro push
+
+# Criar universos paralelos
+```
+git branch nameBranch
+```
+
+`Entrar na branch`
+```
+git checkout nameBranch
+```
